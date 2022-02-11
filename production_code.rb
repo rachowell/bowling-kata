@@ -1,21 +1,38 @@
 class Bowling
   def get_score(scores_array)
-    # 'go over each item in the array and replace 'x' with 10
     joined_scores_array = scores_array.join
     split_string = joined_scores_array.split("")
-
-
-    scores_array.map!{|item| item == "X" ? 10 : item}
-    scores_array.map
-    so loop over the array, for each item split digits and add them together (will only affect double digits)
-
-
-    if scores_array.length == 0
-      0
-    elsif scores_array.length == 1
-      scores_array[0]
-    elsif scores_array.length > 1
-      scores_array.sum
+    
+    # For loop to total all items
+    total = 0
+   
+    for string in split_string
+      if string == "X"
+        total += 10
+      elsif string == ""
+        total
+      else 
+        total += string.to_i
+      end
+      total
     end
-  end    
-end
+    total
+  end
+end    
+
+
+
+
+# if scores_array.length == 0
+#   0
+# elsif scores_array.length == 1 
+#   if scores_array[0].is_a?Integer
+#   scores_array[0]
+#   else
+  
+# elsif scores_array.length > 1
+  # if scores_array.is_a?Integer
+  # scores_array.sum
+  # else
+  #   total
+  # end
