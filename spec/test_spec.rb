@@ -20,13 +20,13 @@ describe 'bowling' do
 
     end
     
-    it 'total_array_with_a_strike' do
+    it 'replace_strike_character_("X")_with_10' do
       bowling = Bowling.new
-      expect(bowling.get_score([10,20,30,'X'])).to eq(16)
-
+      expect(bowling.get_score(['X'])).to eq(10)
     end
 
-
-
-    # end
+    it 'iterate_through_array_sum_all_elements' do
+      bowling = Bowling.new
+      expect(bowling.get_score([10,20,'X',30,40])).to eq(20)
+    end
   end
